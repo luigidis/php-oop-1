@@ -29,12 +29,9 @@ class Movie
         }
     }
 
-    // public function actorHere($actor) {
-    //     foreach ($this->$actors as $actor)
-    //     if ($actor != $actors) {
-    //         array_push($actors);
-    //     }
-    // }
+    public function setActor($new_actor) {
+        array_push($this->actors, $new_actor);
+    }
 };
 
 class Actor {
@@ -46,12 +43,9 @@ class Actor {
     {
         $this->name = $name;
         $this->last_name = $last_name;
-        $this->full_name = $name + $last_name;
+        $this->full_name = $name . ' ' . $last_name;
     }
 };
-
-$actor_1 = new Actor('Zio', 'Gianni');
-var_dump($actor_1);
 
 $actors_movie_1 = ['Bradleu Cooper', 'Zach Galifianakis', 'Ed Helms', 'Ken Jeong'];
 $actors_movie_2 = ['Jordan Belfort', 'Leonardo di Caprio', 'Jonah Hill', 'Margot Robbie'];
@@ -104,7 +98,24 @@ $array_movies = [
     ),
 ];
 
+$actor_1 = new Actor('Zio', 'Gianni');
+var_dump($actor_1);
 
+foreach ($array_movies as $movie) {
+    $actors = $movie->actors;
+    var_dump($actors);
+    var_dump($actor_1->full_name);
+    // foreach ($actors as $actor) {
+        // if ($actor != $actor_1) {
+    $newActor = $actor_1->full_name;
+    array_push($actors, $newActor);
+        // }
+    // }
+}
+
+var_dump($array_movies);
+
+// var_dump($array_movies['actors']);
 
 // var_dump($array_movies);
 
