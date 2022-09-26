@@ -29,24 +29,29 @@ class Movie
         }
     }
 
-    public function actorHere($actor) {
-        foreach ($this->$actors as $actor)
-        if ($actor != $actors) {
-            array_push($actors);
-        }
-    }
+    // public function actorHere($actor) {
+    //     foreach ($this->$actors as $actor)
+    //     if ($actor != $actors) {
+    //         array_push($actors);
+    //     }
+    // }
 };
 
 class Actor {
     public $name;
     public $last_name;
+    public $full_name;
     
     function __construct($name, $last_name)
     {
         $this->name = $name;
         $this->last_name = $last_name;
+        $this->full_name = $name + $last_name;
     }
 };
+
+$actor_1 = new Actor('Zio', 'Gianni');
+var_dump($actor_1);
 
 $actors_movie_1 = ['Bradleu Cooper', 'Zach Galifianakis', 'Ed Helms', 'Ken Jeong'];
 $actors_movie_2 = ['Jordan Belfort', 'Leonardo di Caprio', 'Jonah Hill', 'Margot Robbie'];
